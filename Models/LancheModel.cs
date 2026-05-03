@@ -2,7 +2,7 @@ namespace lanchonete_api.Models;
 
 public class Lanche
 {
-  public int Int { get; set; }
+  public int Id { get; set; }
   public string? LancheNome { get; set; }
   public decimal Unidade { get; set; }
   public int Quantidade { get; set; }

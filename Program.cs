@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore.InMemory;
-using Swashbuckle.AspNetCore.SwaggerUI;
-using Swashbuckle.AspNetCore.SwaggerGen;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
