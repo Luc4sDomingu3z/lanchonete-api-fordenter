@@ -1,0 +1,12 @@
+namespace lanchonete_api.Models;
+
+public class LancheSaida
+{
+    public int Id { get; set; }
+    public int LancheId { get; set; }
+    public Lanche Lanche { get; set; } = null!;
+    public int PedidoId { get; set; }
+    public Pedido Pedido { get; set; } = null!;
+    public int Quantidade { get; set; }
+    public DateTime Momento { get; set; }
+}
