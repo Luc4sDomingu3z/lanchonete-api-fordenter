@@ -1,9 +1,11 @@
-namespace lanchonete_api.Models;
+using Pedido = lanchonete_api.Models.Pedido;
+namespace lanchonete_api.DTOs.ClienteDTOs;
 
-public class Cliente
+public class ClienteDTO
 {
     public int Id { get; set; }
     public string Nome { get; set; } = null!;
+
     public int Idade { get; set; }
     public List<Pedido>? Pedidos { get; set; }
 }
