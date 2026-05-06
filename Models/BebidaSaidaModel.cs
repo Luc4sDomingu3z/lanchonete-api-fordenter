@@ -13,4 +13,5 @@ public class BebidaSaida
 
     public decimal TotalPagar { get; set; }
     public DateTime Momento { get; set; }
+
 }

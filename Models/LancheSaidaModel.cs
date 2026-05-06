@@ -12,4 +12,5 @@ public class LancheSaida
     public int Quantidade { get; set; }
     public decimal TotalPagar { get; set; }
     public DateTime Momento { get; set; }
+
 }

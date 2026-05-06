@@ -8,5 +8,7 @@ public class Bebida
     public decimal Valor { get; set; }
     public int Volume { get; set; }
     public bool Disponivel { get; set; }
-    public DateTime UltimaEntrada { get;  set ; }
+    public DateTime UltimaEntrada { get; set; }
+
+    public ICollection<BebidaSaida> Saidas { get; set; } = [];
 }
