@@ -10,6 +10,6 @@ public class Pedido
     public DateTime Momento { get; set; }
     public decimal TotalPagar { get; set; }
 
-    public ICollection<BebidaSaida>? Bebidas { get; set; }
-    public ICollection<LancheSaida>? Lanches { get; set; }
+    public ICollection<BebidaSaida>? Bebidas { get; } = [];
+    public ICollection<LancheSaida>? Lanches { get; } = [];
 }

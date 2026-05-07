@@ -10,5 +10,5 @@ public class Bebida
     public bool Disponivel { get; set; }
     public DateTime UltimaEntrada { get; set; }
 
-    public ICollection<BebidaSaida> Saidas { get; set; } = [];
+    public ICollection<BebidaSaida> Saidas { get; } = [];
 }

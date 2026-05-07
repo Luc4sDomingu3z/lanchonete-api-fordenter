@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 namespace lanchonete_api.Models;
 
 public class Lanche
@@ -7,5 +8,6 @@ public class Lanche
     public decimal Unidade { get; set; }
     public int Quantidade { get; set; }
     public DateTime UltimaEntrada { get; set; }
-    public ICollection<LancheSaida> Saidas { get; set; } = [];
+
+    public ICollection<LancheSaida> Saidas { get; } = [];
 }
