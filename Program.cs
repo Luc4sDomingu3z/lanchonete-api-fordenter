@@ -1,8 +1,12 @@
 using lanchonete_api.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<LanchoneteApiDbContext>();
+builder.Services.AddDbContext<LanchoneteApiDbContext>(options =>
+{
+    options.UseMySQL(builder.Configuration.GetConnectionString("Default"));
+});
 
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
