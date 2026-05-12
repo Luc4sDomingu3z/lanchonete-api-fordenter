@@ -7,5 +7,5 @@ public class ClienteDTO
     public string Nome { get; set; } = null!;
 
     public int Idade { get; set; }
-    public List<Pedido>? Pedidos { get; set; }
+    public ICollection<Pedido>? Pedidos { get; set; }
 }
