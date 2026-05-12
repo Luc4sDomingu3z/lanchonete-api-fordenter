@@ -1,0 +1,13 @@
+using lanchonete_api.Models;
+namespace lanchonete_api.Interfaces;
+
+public interface IPedidoRepository
+{
+    ICollection<Pedido> GetPedidos();
+    Pedido GetPedido(int pedidoId);
+    bool PedidoExists(int pedidoId);
+    bool CreatePedido(Pedido pedido);
+    bool UpdatePedido(Pedido pedido);
+    bool DeletePedido(Pedido pedido);
+    bool Save();
+}
