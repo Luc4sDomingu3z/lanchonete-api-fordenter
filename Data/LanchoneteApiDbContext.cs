@@ -14,38 +14,13 @@ public class LanchoneteApiDbContext(DbContextOptions<LanchoneteApiDbContext> opt
     public DbSet<Bebida>? Bebidas { get; set; }
     public DbSet<BebidaSaida>? BebidaSaidas { get; set; }
 
-    /*
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Saida de bebidas para pedidos
-        modelBuilder.Entity<Pedido>()
-            .HasMany(p => p.Bebidas)
-            .WithOne(b => b.Pedido)
-            .HasForeignKey(b => b.BebidaId)
-            .OnDelete(DeleteBehavior.NoAction);
-
-        // Saida de lanches para pedidos
-        modelBuilder.Entity<Pedido>()
-            .HasMany(p => p.Lanches)
-            .WithOne(l => l.Pedido)
-            .HasForeignKey(l => l.LancheId)
-            .OnDelete(DeleteBehavior.NoAction);
-
-        modelBuilder.Entity<Pedido>()
-            .HasOne(p => p.Cliente)
-            .WithMany(cli => cli.Pedidos)
-            .HasForeignKey(p => p.ClienteId)
-            .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<Bebida>()
-            .HasMany(b => b.Saidas)
-            .WithOne(s => s.Bebida)
-            .HasForeignKey(s => s.Id)
-            .OnDelete(DeleteBehavior.NoAction);
-
         modelBuilder.Entity<Lanche>()
-            .HasMany(b => b.Saidas)
+            .HasMany(l => l.Saidas)
+            .WithOne(s => s.Lanche)
+            .HasForeignKey(s => s.LancheId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
-    */
 
 }
