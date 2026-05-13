@@ -1,4 +1,6 @@
 using lanchonete_api.Data;
+using lanchonete_api.Interfaces;
+using lanchonete_api.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,12 @@ builder.Services.AddDbContext<LanchoneteApiDbContext>(options =>
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Scopos
+builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IOperadorRepository, OperadorRepository>();
+
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
         {

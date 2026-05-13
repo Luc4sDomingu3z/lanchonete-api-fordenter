@@ -3,11 +3,12 @@ namespace lanchonete_api.Interfaces;
 
 public interface IPedidoRepository
 {
-    ICollection<Pedido> GetPedidos();
-    Pedido GetPedido(int pedidoId);
+    ICollection<Pedido>? GetPedidos();
+    Task<Pedido?> GetPedidoAsync(int pedidoId);
+    Pedido? GetPedido(int pedidoId);
     bool PedidoExists(int pedidoId);
-    bool CreatePedido(Pedido pedido);
-    bool UpdatePedido(Pedido pedido);
-    bool DeletePedido(Pedido pedido);
-    bool Save();
+    // bool CreatePedido(Pedido pedido);
+    // bool UpdatePedido(Pedido pedido);
+    // bool DeletePedido(Pedido pedido);
+    // bool Save();
 }

@@ -1,9 +1,11 @@
 using lanchonete_api.Data;
+using lanchonete_api.Interfaces;
 using lanchonete_api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace lanchonete_api.Repository
 {
-    public class PedidoRepository(LanchoneteApiDbContext context)
+    public class PedidoRepository(LanchoneteApiDbContext context) : IPedidoRepository
     {
         // DBContext
         private readonly LanchoneteApiDbContext _context = context;
@@ -13,9 +15,26 @@ namespace lanchonete_api.Repository
             return _context.Pedidos?.OrderBy(p => p.Id).ToList();
         }
 
+        public async Task<Pedido?> GetPedidoAsync(int pedidoId)
+        {
+            Pedido? pedido = await _context.Pedidos!.FindAsync(pedidoId);
+            if (pedido == null)
+                return null;
+            return pedido;
+        }
+
         public Pedido? GetPedido(int pedidoId)
         {
-            return _context.Pedidos?.Find(pedidoId);
+            Pedido? pedido = _context.Pedidos?.Find(pedidoId);
+            return pedido;
+        }
+
+        public bool PedidoExists(int pedidoId)
+        {
+            var pedido = _context.Pedidos?.Find(pedidoId);
+            if (pedido != null)
+                return true;
+            return false;
         }
     }
 };

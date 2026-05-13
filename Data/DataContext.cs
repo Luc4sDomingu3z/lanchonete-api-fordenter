@@ -16,6 +16,24 @@ public class LanchoneteApiDbContext(DbContextOptions<LanchoneteApiDbContext> opt
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Pedido>()
+            .HasOne(p => p.Cliente)
+            .WithMany(c => c.Pedidos)
+            .HasForeignKey(p => p.ClienteId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // modelBuilder.Entity<Pedido>()
+        //     .HasMany(p => p.Bebidas)
+        //     .WithOne(b => b.Pedido)
+        //     .HasForeignKey(b => b.PedidoId)
+        //     .OnDelete(DeleteBehavior.NoAction);
+
+        // modelBuilder.Entity<Pedido>()
+        //     .HasMany(p => p.Lanches)
+        //     .WithOne(l => l.Pedido)
+        //     .HasForeignKey(l => l.PedidoId)
+        //     .OnDelete(DeleteBehavior.NoAction);
+
         modelBuilder.Entity<Lanche>()
             .HasMany(l => l.Saidas)
             .WithOne(s => s.Lanche)

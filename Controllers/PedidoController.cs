@@ -20,4 +20,12 @@ public class PedidoController(IPedidoRepository pedidoRepository) : Controller
 
         return Ok(pedidos);
     }
+
+    [HttpGet("{id}")]
+    [ProducesResponseType(200, Type = typeof(Pedido))]
+    public async Task<IActionResult> GetPedidoJoinAsync(int id)
+    {
+        var pedido = await _pedidoRepository.GetPedidoAsync(id);
+        return (!ModelState.IsValid) ? BadRequest(ModelState) : Ok(pedido);
+    }
 }
