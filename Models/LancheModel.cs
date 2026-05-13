@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
 namespace lanchonete_api.Models;
 
 public class Lanche

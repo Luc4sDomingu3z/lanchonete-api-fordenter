@@ -1,7 +1,6 @@
 using lanchonete_api.Data;
 using lanchonete_api.Interfaces;
 using lanchonete_api.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace lanchonete_api.Repository
 {
