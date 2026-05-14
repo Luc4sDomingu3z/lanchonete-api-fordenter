@@ -1,8 +1,8 @@
 using lanchonete_api.Models;
 
-namespace lanchonete_api.Interfaces;
+namespace lanchonete_api.Interfaces.Services;
 
-public interface ILancheRepository
+public interface ILancheService
 {
     ICollection<Lanche>? GetLanches();
     Task<Lanche?> GetLancheAsync(int lancheId);

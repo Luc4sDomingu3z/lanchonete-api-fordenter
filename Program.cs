@@ -1,5 +1,5 @@
 using lanchonete_api.Data;
-using lanchonete_api.Interfaces;
+using lanchonete_api.Interfaces.Repositories;
 using lanchonete_api.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +22,15 @@ builder.Services.AddScoped<IBebidaRepository, BebidaRepository>();
 builder.Services.AddScoped<IBebidaSaidaRepository, BebidaSaidaRepository>();
 builder.Services.AddScoped<ILancheRepository, LancheRepository>();
 builder.Services.AddScoped<ILancheSaidaRepository, LancheSaidaRepository>();
+
+// Scopos de servicos
+// builder.Services.AddScoped<IPedidoService, PedidoService>();
+// builder.Services.AddScoped<IClienteService, ClienteService>();
+// builder.Services.AddScoped<IOperadorService, OperadorService>();
+// builder.Services.AddScoped<IBebidaService, BebidaService>();
+// builder.Services.AddScoped<IBebidaSaidaService, BebidaSaidaService>();
+// builder.Services.AddScoped<ILancheService, LancheService>();
+// builder.Services.AddScoped<ILancheSaidaService, LancheSaidaService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

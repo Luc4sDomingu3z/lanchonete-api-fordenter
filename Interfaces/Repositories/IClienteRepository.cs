@@ -1,5 +1,6 @@
 using lanchonete_api.Models;
-namespace lanchonete_api.Interfaces;
+
+namespace lanchonete_api.Interfaces.Repositories;
 
 public interface IClienteRepository
 {

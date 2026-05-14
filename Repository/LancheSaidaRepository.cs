@@ -1,5 +1,5 @@
 using lanchonete_api.Data;
-using lanchonete_api.Interfaces;
+using lanchonete_api.Interfaces.Repositories;
 using lanchonete_api.Models;
 
 namespace lanchonete_api.Repository;

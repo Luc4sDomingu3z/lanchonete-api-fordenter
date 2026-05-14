@@ -1,6 +1,6 @@
 using lanchonete_api.Models;
 using lanchonete_api.Data;
-using lanchonete_api.Interfaces;
+using lanchonete_api.Interfaces.Repositories;
 namespace lanchonete_api.Repository;
 
 public class OperadorRepository(LanchoneteApiDbContext context) : IOperadorRepository

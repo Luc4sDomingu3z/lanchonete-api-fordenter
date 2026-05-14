@@ -1,7 +1,8 @@
 ﻿using lanchonete_api.Models;
-namespace lanchonete_api.Interfaces;
 
-public interface IOperadorRepository
+namespace lanchonete_api.Interfaces.Services;
+
+public interface IOperadorService
 {
     ICollection<Operador>? GetOperadores();
     Task<Operador?> GetOperadorAsync(int operadorId);
