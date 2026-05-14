@@ -14,10 +14,14 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Scopos
+// Scopos repositories
 builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IOperadorRepository, OperadorRepository>();
+builder.Services.AddScoped<IBebidaRepository, BebidaRepository>();
+builder.Services.AddScoped<IBebidaSaidaRepository, BebidaSaidaRepository>();
+builder.Services.AddScoped<ILancheRepository, LancheRepository>();
+builder.Services.AddScoped<ILancheSaidaRepository, LancheSaidaRepository>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
