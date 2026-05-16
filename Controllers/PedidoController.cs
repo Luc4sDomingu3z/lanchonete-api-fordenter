@@ -1,4 +1,4 @@
-using lanchonete_api.Interfaces;
+using lanchonete_api.Interfaces.Repositories;
 using lanchonete_api.Models;
 using Microsoft.AspNetCore.Mvc;
 

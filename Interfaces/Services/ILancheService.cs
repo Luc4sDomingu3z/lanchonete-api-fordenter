@@ -1,15 +1,15 @@
-using lanchonete_api.Models;
+using lanchonete_api.DTOs.LancheDTOs;
 
 namespace lanchonete_api.Interfaces.Services;
 
 public interface ILancheService
 {
-    ICollection<Lanche>? GetLanches();
-    Task<Lanche?> GetLancheAsync(int lancheId);
-    Lanche? GetLanche(int lancheId);
+    IEnumerable<LancheDTO>? GetLanches();
+    Task<LancheDTO?> GetLancheAsync(int lancheId);
+    LancheDTO? GetLanche(int lancheId);
     bool LancheExists(int lancheId);
-    // bool CreateLanche(Lanche lanche);
-    // bool UpdateLanche(Lanche lanche);
-    // bool DeleteLanche(Lanche lanche);
-    // bool Save();
+    bool CreateLanche(LancheDTO lanche);
+    bool UpdateLanche(LancheDTO lanche);
+    bool DeleteLanche(LancheDTO lanche);
+    bool Save();
 }

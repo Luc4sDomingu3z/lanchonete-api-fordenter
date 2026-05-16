@@ -1,15 +1,15 @@
-using lanchonete_api.Models;
+using lanchonete_api.DTOs.ClienteDTOs;
 
 namespace lanchonete_api.Interfaces.Services;
 
 public interface IClienteService
 {
-    ICollection<Cliente>? GetClientes();
-    Task<Cliente?> GetClienteAsync(int clienteId);
-    Cliente? GetCliente(int clienteId);
+    IEnumerable<ClienteDTO>? GetClientes();
+    Task<ClienteDTO?> GetClienteAsync(int clienteId);
+    ClienteDTO? GetCliente(int clienteId);
     bool ClienteExists(int clienteId);
-    // bool CreateCliente(Cliente cliente);
-    // bool UpdateCliente(Cliente cliente);
-    // bool DeleteCliente(Cliente cliente);
-    // bool Save();
+    bool CreateCliente(ClienteDTO cliente);
+    bool UpdateCliente(ClienteDTO cliente);
+    bool DeleteCliente(ClienteDTO cliente);
+    bool Save();
 }

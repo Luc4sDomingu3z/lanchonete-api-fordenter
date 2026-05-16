@@ -1,15 +1,15 @@
-﻿using lanchonete_api.Models;
+﻿using lanchonete_api.DTOs.OperadorDTOs;
 
 namespace lanchonete_api.Interfaces.Services;
 
 public interface IOperadorService
 {
-    ICollection<Operador>? GetOperadores();
-    Task<Operador?> GetOperadorAsync(int operadorId);
-    Operador? GetOperador(int operadorId);
+    IEnumerable<OperadorDTO>? GetOperadores();
+    Task<OperadorDTO?> GetOperadorAsync(int operadorId);
+    OperadorDTO? GetOperador(int operadorId);
     bool OperadorExists(int operadorId);
-    // bool CreateOperador(Operador operador);
-    // bool UpdateOperador(Operador operador);
-    // bool DeleteOperador(Operador operador);
-    // bool Save();
+    bool CreateOperador(OperadorDTO operador);
+    bool UpdateOperador(OperadorDTO operador);
+    bool DeleteOperador(OperadorDTO operador);
+    bool Save();
 }

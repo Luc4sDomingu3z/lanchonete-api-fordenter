@@ -1,6 +1,7 @@
+using lanchonete_api.Interfaces.Repositories;
 using lanchonete_api.Models;
 using Microsoft.AspNetCore.Mvc;
-using lanchonete_api.Interfaces;
+
 namespace lanchonete_api.Controllers;
 
 [Route("api/[controller]")]

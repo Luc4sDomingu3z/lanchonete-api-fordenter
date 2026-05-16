@@ -1,15 +1,15 @@
-using lanchonete_api.Models;
+using lanchonete_api.DTOs.PedidoDTOs;
 
 namespace lanchonete_api.Interfaces.Services;
 
 public interface IPedidoService
 {
-    ICollection<Pedido>? GetPedidos();
-    Task<Pedido?> GetPedidoAsync(int pedidoId);
-    Pedido? GetPedido(int pedidoId);
+    IEnumerable<PedidoDTO>? GetPedidos();
+    Task<PedidoDTO?> GetPedidoAsync(int pedidoId);
+    PedidoDTO? GetPedido(int pedidoId);
     bool PedidoExists(int pedidoId);
-    // bool CreatePedido(Pedido pedido);
-    // bool UpdatePedido(Pedido pedido);
-    // bool DeletePedido(Pedido pedido);
-    // bool Save();
+    bool CreatePedido(PedidoDTO pedido);
+    bool UpdatePedido(PedidoDTO pedido);
+    bool DeletePedido(PedidoDTO pedido);
+    bool Save();
 }

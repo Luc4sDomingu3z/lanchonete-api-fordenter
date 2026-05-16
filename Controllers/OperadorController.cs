@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
+using lanchonete_api.Interfaces.Repositories;
 using lanchonete_api.Models;
-using lanchonete_api.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace lanchonete_api.Controllers;
 
